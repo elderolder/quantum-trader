@@ -21,3 +21,24 @@ Once your Codespace terminal is ready, run the following single command. This wi
 
 ```bash
 docker-compose up --build
+```
+
+You will see a lot of log output as the services start. This is normal.
+
+Step 3: Verify Everything is Running
+
+The system is now live! GitHub Codespaces automatically forwards the necessary ports.
+
+Check the Backend: Open http://localhost:8000 in a new browser tab. You should see {"status":"OK","message":"Quantum Trader Pro Backend is Live!"}.
+
+Check the Frontend: Open http://localhost:3000. You'll see the basic "Quantum Trader Pro UI".
+
+Confirm the Real-Time Connection: With the frontend tab open, check the browser's developer console (usually F12 or Ctrl+Shift+I). You should see the message: ✅ Connected to WebSocket.
+
+🎉 That's it! You now have a live, real-time connection between the frontend and backend.
+
+What's Next?
+
+Curious how all the pieces fit together? For a detailed explanation of the container setup, WebSocket connections, and real-time architecture, dive into the full tutorial.
+
+View the Full Real-Time Setup Tutorial{ .md-button }
