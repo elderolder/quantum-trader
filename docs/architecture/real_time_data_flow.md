@@ -13,7 +13,7 @@ This tutorial covers:
 
 ### Prerequisites
 
-*   You have completed the [5-Minute Quickstart](./../getting-started.md).
+*   You have completed the [5-Minute Quickstart](../getting-started/quickstart.md).
 *   You have a basic understanding of Docker and `docker-compose`.
 
 ---
@@ -36,14 +36,6 @@ quantum-trader/
 ├── index.html
 ├── main.jsx
 └── package.json
-
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
 
 
 ### 2. Configure Codespaces: `.devcontainer/devcontainer.json`
@@ -72,9 +64,7 @@ This file defines the development container, telling Codespaces how to build the
 
 This file orchestrates all the services required for the application: the Python backend, the React frontend, and the Redis cache.
 
-```json
-version: "3.9"
-
+```yaml
 services:
   backend:
     build:
@@ -105,13 +95,13 @@ services:
     volumes:
       - ./frontend:/app
     command: npm run dev
-  ```
-  
+```
+
 4. FastAPI App Setup (with WebSocket)
 
 The core of the backend is the main.py file, which sets up the FastAPI application and the Socket.IO manager for real-time communication.
 
-```json
+```python
 # located in backend/main.py
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
