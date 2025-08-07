@@ -1,6 +1,7 @@
-site_name: Quantum Trader Pro Docs
+site_name: Axion Citadel Docs
 theme:
   name: material
+  custom_dir: docs
   features:
     - navigation.tabs
     - navigation.sections
@@ -18,7 +19,7 @@ markdown_extensions:
   - attr_list
 
 nav:
-  - 'Home': index.md
+  - 'Home': index.html # <-- Make sure this points to index.html
   - 'Getting Started':
     - 'Introduction': getting-started/introduction.md
     - 'Quickstart': getting-started/quickstart.md
