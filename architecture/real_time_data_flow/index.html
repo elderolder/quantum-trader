@@ -1247,7 +1247,7 @@
 </ul>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
-<li>You have completed the <a href="./../getting-started.md">5-Minute Quickstart</a>.</li>
+<li>You have completed the <a href="../../getting-started/quickstart/">5-Minute Quickstart</a>.</li>
 <li>You have a basic understanding of Docker and <code>docker-compose</code>.</li>
 </ul>
 <hr />
@@ -1267,13 +1267,6 @@
 ├── index.html
 ├── main.jsx
 └── package.json</p>
-<p>code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END</p>
 <h3 id="2-configure-codespaces-devcontainerdevcontainerjson">2. Configure Codespaces: <code>.devcontainer/devcontainer.json</code></h3>
 <p>This file defines the development container, telling Codespaces how to build the environment.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1296,78 +1289,74 @@ IGNORE_WHEN_COPYING_END</p>
 <li>Container Composition: docker-compose.yml</li>
 </ol>
 <p>This file orchestrates all the services required for the application: the Python backend, the React frontend, and the Redis cache.</p>
-<div class="highlight"><pre><span></span><code><span class="err">versio</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.9&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./backend</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fastapi_app</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8000:8000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./backend:/workspace/backend</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REDIS_URL=redis://redis:6379</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uvicorn main:app --host 0.0.0.0 --port 8000 --reload</span>
 
-<span class="err">services</span><span class="p">:</span>
-<span class="w">  </span><span class="err">backe</span><span class="kc">n</span><span class="err">d</span><span class="p">:</span>
-<span class="w">    </span><span class="err">build</span><span class="p">:</span>
-<span class="w">      </span><span class="err">co</span><span class="kc">nte</span><span class="err">x</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">./backe</span><span class="kc">n</span><span class="err">d</span>
-<span class="w">    </span><span class="err">co</span><span class="kc">nta</span><span class="err">i</span><span class="kc">ner</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="kc">fasta</span><span class="err">pi_app</span>
-<span class="w">    </span><span class="err">por</span><span class="kc">ts</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="s2">&quot;8000:8000&quot;</span>
-<span class="w">    </span><span class="err">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="err">./backe</span><span class="kc">n</span><span class="err">d</span><span class="p">:</span><span class="err">/workspace/backe</span><span class="kc">n</span><span class="err">d</span>
-<span class="w">    </span><span class="err">depe</span><span class="kc">n</span><span class="err">ds_o</span><span class="kc">n</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="err">redis</span>
-<span class="w">    </span><span class="err">e</span><span class="kc">n</span><span class="err">viro</span><span class="kc">n</span><span class="err">me</span><span class="kc">nt</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="err">REDIS_URL=redis</span><span class="p">:</span><span class="c1">//redis:6379</span>
-<span class="w">    </span><span class="err">comma</span><span class="kc">n</span><span class="err">d</span><span class="p">:</span><span class="w"> </span><span class="err">uvicor</span><span class="kc">n</span><span class="w"> </span><span class="err">mai</span><span class="kc">n</span><span class="p">:</span><span class="err">app</span><span class="w"> </span><span class="mi">--</span><span class="err">hos</span><span class="kc">t</span><span class="w"> </span><span class="mf">0.0.0.0</span><span class="w"> </span><span class="mi">--</span><span class="err">por</span><span class="kc">t</span><span class="w"> </span><span class="mi">8000</span><span class="w"> </span><span class="mi">--</span><span class="err">reload</span>
+<span class="w">  </span><span class="nt">redis</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:7-alpine</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis_cache</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;6379:6379&quot;</span>
 
-<span class="w">  </span><span class="err">redis</span><span class="p">:</span>
-<span class="w">    </span><span class="err">image</span><span class="p">:</span><span class="w"> </span><span class="err">redis</span><span class="p">:</span><span class="mi">7-</span><span class="err">alpi</span><span class="kc">ne</span>
-<span class="w">    </span><span class="err">co</span><span class="kc">nta</span><span class="err">i</span><span class="kc">ner</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">redis_cache</span>
-<span class="w">    </span><span class="err">por</span><span class="kc">ts</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="s2">&quot;6379:6379&quot;</span>
+<span class="w">  </span><span class="nt">frontend</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./frontend</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">react_ui</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3000:3000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./frontend:/app</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm run dev</span>
+</code></pre></div>
+<ol>
+<li>FastAPI App Setup (with WebSocket)</li>
+</ol>
+<p>The core of the backend is the main.py file, which sets up the FastAPI application and the Socket.IO manager for real-time communication.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># located in backend/main.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.middleware.cors</span><span class="w"> </span><span class="kn">import</span> <span class="n">CORSMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi_socketio</span><span class="w"> </span><span class="kn">import</span> <span class="n">SocketManager</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="w">  </span><span class="kc">fr</span><span class="err">o</span><span class="kc">nten</span><span class="err">d</span><span class="p">:</span>
-<span class="w">    </span><span class="err">build</span><span class="p">:</span>
-<span class="w">      </span><span class="err">co</span><span class="kc">nte</span><span class="err">x</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">./</span><span class="kc">fr</span><span class="err">o</span><span class="kc">nten</span><span class="err">d</span>
-<span class="w">    </span><span class="err">co</span><span class="kc">nta</span><span class="err">i</span><span class="kc">ner</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">reac</span><span class="kc">t</span><span class="err">_ui</span>
-<span class="w">    </span><span class="err">por</span><span class="kc">ts</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="s2">&quot;3000:3000&quot;</span>
-<span class="w">    </span><span class="err">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="err">./</span><span class="kc">fr</span><span class="err">o</span><span class="kc">nten</span><span class="err">d</span><span class="p">:</span><span class="err">/app</span>
-<span class="w">    </span><span class="err">comma</span><span class="kc">n</span><span class="err">d</span><span class="p">:</span><span class="w"> </span><span class="kc">n</span><span class="err">pm</span><span class="w"> </span><span class="err">ru</span><span class="kc">n</span><span class="w"> </span><span class="err">dev</span>
-<span class="w">  </span><span class="err">```</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.logic.cipher</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_market_data</span><span class="p">,</span> <span class="n">calculate_quantum_cipher</span>
 
-<span class="mf">4.</span><span class="w"> </span><span class="err">Fas</span><span class="kc">t</span><span class="err">API</span><span class="w"> </span><span class="err">App</span><span class="w"> </span><span class="err">Se</span><span class="kc">tu</span><span class="err">p</span><span class="w"> </span><span class="err">(wi</span><span class="kc">t</span><span class="err">h</span><span class="w"> </span><span class="err">WebSocke</span><span class="kc">t</span><span class="err">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Quantum Trader Pro API&quot;</span><span class="p">)</span>
+<span class="n">sio</span> <span class="o">=</span> <span class="n">SocketManager</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">)</span>
 
-<span class="err">The</span><span class="w"> </span><span class="err">core</span><span class="w"> </span><span class="err">o</span><span class="kc">f</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">backe</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">mai</span><span class="kc">n</span><span class="err">.py</span><span class="w"> </span><span class="kc">f</span><span class="err">ile</span><span class="p">,</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">se</span><span class="kc">ts</span><span class="w"> </span><span class="err">up</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">Fas</span><span class="kc">t</span><span class="err">API</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">Socke</span><span class="kc">t</span><span class="err">.IO</span><span class="w"> </span><span class="err">ma</span><span class="kc">na</span><span class="err">ger</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">real</span><span class="mi">-</span><span class="kc">t</span><span class="err">ime</span><span class="w"> </span><span class="err">commu</span><span class="kc">n</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">.</span>
+<span class="c1"># CORS for dev</span>
+<span class="n">app</span><span class="o">.</span><span class="n">add_middleware</span><span class="p">(</span>
+    <span class="n">CORSMiddleware</span><span class="p">,</span>
+    <span class="n">allow_origins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+    <span class="n">allow_credentials</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">allow_methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+    <span class="n">allow_headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="p">)</span>
 
-<span class="err">```jso</span><span class="kc">n</span>
-<span class="err">#</span><span class="w"> </span><span class="err">loca</span><span class="kc">te</span><span class="err">d</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="w"> </span><span class="err">backe</span><span class="kc">n</span><span class="err">d/mai</span><span class="kc">n</span><span class="err">.py</span>
-<span class="kc">fr</span><span class="err">om</span><span class="w"> </span><span class="kc">fasta</span><span class="err">pi</span><span class="w"> </span><span class="err">impor</span><span class="kc">t</span><span class="w"> </span><span class="err">Fas</span><span class="kc">t</span><span class="err">API</span><span class="p">,</span><span class="w"> </span><span class="err">HTTPExcep</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span>
-<span class="kc">fr</span><span class="err">om</span><span class="w"> </span><span class="kc">fasta</span><span class="err">pi.middleware.cors</span><span class="w"> </span><span class="err">impor</span><span class="kc">t</span><span class="w"> </span><span class="err">CORSMiddleware</span>
-<span class="kc">fr</span><span class="err">om</span><span class="w"> </span><span class="kc">fasta</span><span class="err">pi_socke</span><span class="kc">t</span><span class="err">io</span><span class="w"> </span><span class="err">impor</span><span class="kc">t</span><span class="w"> </span><span class="err">Socke</span><span class="kc">t</span><span class="err">Ma</span><span class="kc">na</span><span class="err">ger</span>
-<span class="err">impor</span><span class="kc">t</span><span class="w"> </span><span class="err">pa</span><span class="kc">n</span><span class="err">das</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">pd</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Quantum Trader Pro Backend is Live!&quot;</span><span class="p">}</span>
 
-<span class="kc">fr</span><span class="err">om</span><span class="w"> </span><span class="err">app.logic.cipher</span><span class="w"> </span><span class="err">impor</span><span class="kc">t</span><span class="w"> </span><span class="kc">fet</span><span class="err">ch_marke</span><span class="kc">t</span><span class="err">_da</span><span class="kc">ta</span><span class="p">,</span><span class="w"> </span><span class="err">calcula</span><span class="kc">te</span><span class="err">_qua</span><span class="kc">ntu</span><span class="err">m_cipher</span>
+<span class="nd">@sio</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="n">environ</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[WebSocket] Client connected: </span><span class="si">{</span><span class="n">sid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">sio</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Connected to Quantum Trader WS&#39;</span><span class="p">},</span> <span class="n">to</span><span class="o">=</span><span class="n">sid</span><span class="p">)</span>
 
-<span class="err">app</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Fas</span><span class="kc">t</span><span class="err">API(</span><span class="kc">t</span><span class="err">i</span><span class="kc">tle</span><span class="err">=</span><span class="s2">&quot;Quantum Trader Pro API&quot;</span><span class="err">)</span>
-<span class="err">sio</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Socke</span><span class="kc">t</span><span class="err">Ma</span><span class="kc">na</span><span class="err">ger(app=app)</span>
-
-<span class="err">#</span><span class="w"> </span><span class="err">CORS</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">dev</span>
-<span class="err">app.add_middleware(</span>
-<span class="w">    </span><span class="err">CORSMiddleware</span><span class="p">,</span>
-<span class="w">    </span><span class="err">allow_origi</span><span class="kc">ns</span><span class="err">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="err">allow_crede</span><span class="kc">nt</span><span class="err">ials=True</span><span class="p">,</span>
-<span class="w">    </span><span class="err">allow_me</span><span class="kc">t</span><span class="err">hods=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="err">allow_headers=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
-<span class="err">)</span>
-
-<span class="err">@app.ge</span><span class="kc">t</span><span class="err">(</span><span class="s2">&quot;/&quot;</span><span class="err">)</span>
-<span class="err">de</span><span class="kc">f</span><span class="w"> </span><span class="err">heal</span><span class="kc">t</span><span class="err">h_check()</span><span class="p">:</span>
-<span class="w">    </span><span class="err">re</span><span class="kc">turn</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Quantum Trader Pro Backend is Live!&quot;</span><span class="p">}</span>
-
-<span class="err">@sio.o</span><span class="kc">n</span><span class="err">(&#39;co</span><span class="kc">nne</span><span class="err">c</span><span class="kc">t</span><span class="err">&#39;)</span>
-<span class="err">asy</span><span class="kc">n</span><span class="err">c</span><span class="w"> </span><span class="err">de</span><span class="kc">f</span><span class="w"> </span><span class="err">co</span><span class="kc">nne</span><span class="err">c</span><span class="kc">t</span><span class="err">(sid</span><span class="p">,</span><span class="w"> </span><span class="err">e</span><span class="kc">n</span><span class="err">viro</span><span class="kc">n</span><span class="err">)</span><span class="p">:</span>
-<span class="w">    </span><span class="err">pri</span><span class="kc">nt</span><span class="err">(</span><span class="kc">f</span><span class="s2">&quot;[WebSocket] Client connected: {sid}&quot;</span><span class="err">)</span>
-<span class="w">    </span><span class="err">awai</span><span class="kc">t</span><span class="w"> </span><span class="err">sio.emi</span><span class="kc">t</span><span class="err">(&#39;message&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="err">&#39;message&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Co</span><span class="kc">nne</span><span class="err">c</span><span class="kc">te</span><span class="err">d</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">Qua</span><span class="kc">ntu</span><span class="err">m</span><span class="w"> </span><span class="err">Trader</span><span class="w"> </span><span class="err">WS&#39;</span><span class="p">},</span><span class="w"> </span><span class="kc">t</span><span class="err">o=sid)</span>
-
-<span class="err">@app.ge</span><span class="kc">t</span><span class="err">(</span><span class="s2">&quot;/ws-test&quot;</span><span class="err">)</span>
-<span class="err">asy</span><span class="kc">n</span><span class="err">c</span><span class="w"> </span><span class="err">de</span><span class="kc">f</span><span class="w"> </span><span class="kc">test</span><span class="err">_socke</span><span class="kc">t</span><span class="err">()</span><span class="p">:</span>
-<span class="w">    </span><span class="err">awai</span><span class="kc">t</span><span class="w"> </span><span class="err">sio.emi</span><span class="kc">t</span><span class="err">(</span><span class="s2">&quot;new_signal&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🚨 Test signal from backend!&quot;</span><span class="p">}</span><span class="err">)</span>
-<span class="w">    </span><span class="err">re</span><span class="kc">turn</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signal emitted&quot;</span><span class="p">}</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/ws-test&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test_socket</span><span class="p">():</span>
+    <span class="k">await</span> <span class="n">sio</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s2">&quot;new_signal&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;🚨 Test signal from backend!&quot;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Signal emitted&quot;</span><span class="p">}</span>
 </code></pre></div>
 <p>This setup provides a health check endpoint, a WebSocket connection handler, and a test route to verify that real-time messages can be sent.</p>
 
