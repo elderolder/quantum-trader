@@ -7,6 +7,13 @@ theme:
     - content.code.copy
     - content.code.annotate
 
+# This is the new section that enables cool features
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+
 nav:
   - 'Home': index.md
   - 'Get Started':
