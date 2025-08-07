@@ -9,18 +9,22 @@
       
       
       
+        <link rel="prev" href="../fastapi_structure/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../redis_pubsub/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Quantum Trader Pro Docs</title>
+        <title>WebSocket Service - Quantum Trader Pro Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -39,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#websocket-service" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -67,7 +76,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Quantum Trader Pro Docs" class="md-header__button md-logo" aria-label="Quantum Trader Pro Docs" data-md-component="logo">
+    <a href="../.." title="Quantum Trader Pro Docs" class="md-header__button md-logo" aria-label="Quantum Trader Pro Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -87,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              WebSocket Service
             
           </span>
         </div>
@@ -160,7 +169,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -181,7 +190,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/getting-started/introduction/" class="md-tabs__link">
+        <a href="../../getting-started/introduction/" class="md-tabs__link">
           
   
   
@@ -201,7 +210,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/architecture/system_overview/" class="md-tabs__link">
+        <a href="../../architecture/system_overview/" class="md-tabs__link">
           
   
   
@@ -217,11 +226,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/backend/fastapi_structure/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../fastapi_structure/" class="md-tabs__link">
           
   
   
@@ -241,7 +252,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/frontend/react_structure/" class="md-tabs__link">
+        <a href="../../frontend/react_structure/" class="md-tabs__link">
           
   
   
@@ -261,7 +272,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/api/quantum_cipher_api/" class="md-tabs__link">
+        <a href="../../api/quantum_cipher_api/" class="md-tabs__link">
           
   
   
@@ -281,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/ai-logic/indicator_definitions/" class="md-tabs__link">
+        <a href="../../ai-logic/indicator_definitions/" class="md-tabs__link">
           
   
   
@@ -301,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/deployment/security_checklist/" class="md-tabs__link">
+        <a href="../../deployment/security_checklist/" class="md-tabs__link">
           
   
   
@@ -335,7 +346,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Quantum Trader Pro Docs" class="md-nav__button md-logo" aria-label="Quantum Trader Pro Docs" data-md-component="logo">
+    <a href="../.." title="Quantum Trader Pro Docs" class="md-nav__button md-logo" aria-label="Quantum Trader Pro Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -353,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -418,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/getting-started/introduction/" class="md-nav__link">
+      <a href="../../getting-started/introduction/" class="md-nav__link">
         
   
   
@@ -441,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/getting-started/quickstart/" class="md-nav__link">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
         
   
   
@@ -464,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/getting-started/tools_resources/" class="md-nav__link">
+      <a href="../../getting-started/tools_resources/" class="md-nav__link">
         
   
   
@@ -537,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/architecture/system_overview/" class="md-nav__link">
+      <a href="../../architecture/system_overview/" class="md-nav__link">
         
   
   
@@ -560,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/architecture/real_time_data_flow/" class="md-nav__link">
+      <a href="../../architecture/real_time_data_flow/" class="md-nav__link">
         
   
   
@@ -583,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/architecture/ai_orchestration/" class="md-nav__link">
+      <a href="../../architecture/ai_orchestration/" class="md-nav__link">
         
   
   
@@ -610,26 +621,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -642,7 +658,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Backend Services
@@ -656,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/backend/fastapi_structure/" class="md-nav__link">
+      <a href="../fastapi_structure/" class="md-nav__link">
         
   
   
@@ -676,10 +692,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/backend/websocket_service/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    WebSocket Service
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -690,6 +728,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Technology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Location
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-side-event-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-Side Event Handlers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server-Side Event Handlers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      disconnect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emitted-events-server-to-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emitted Events (Server to Client)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Emitted Events (Server to Client)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new_signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_signal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      status_update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -702,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/backend/redis_pubsub/" class="md-nav__link">
+      <a href="../redis_pubsub/" class="md-nav__link">
         
   
   
@@ -775,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/frontend/react_structure/" class="md-nav__link">
+      <a href="../../frontend/react_structure/" class="md-nav__link">
         
   
   
@@ -848,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/api/quantum_cipher_api/" class="md-nav__link">
+      <a href="../../api/quantum_cipher_api/" class="md-nav__link">
         
   
   
@@ -871,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/api/quantum_volume_profile_api/" class="md-nav__link">
+      <a href="../../api/quantum_volume_profile_api/" class="md-nav__link">
         
   
   
@@ -944,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ai-logic/indicator_definitions/" class="md-nav__link">
+      <a href="../../ai-logic/indicator_definitions/" class="md-nav__link">
         
   
   
@@ -967,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ai-logic/prompt_templates/" class="md-nav__link">
+      <a href="../../ai-logic/prompt_templates/" class="md-nav__link">
         
   
   
@@ -1040,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/deployment/security_checklist/" class="md-nav__link">
+      <a href="../../deployment/security_checklist/" class="md-nav__link">
         
   
   
@@ -1080,6 +1222,100 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Technology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Location
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-side-event-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server-Side Event Handlers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server-Side Event Handlers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      disconnect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emitted-events-server-to-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emitted Events (Server to Client)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Emitted Events (Server to Client)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new_signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_signal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      status_update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1091,8 +1327,105 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="websocket-service">WebSocket Service</h1>
+<p>This document specifies the design and implementation of the real-time WebSocket service, which is responsible for pushing live data and signals to connected frontend clients.</p>
+<p><strong>Audience:</strong> Gemini (Implementation), You (Verification)
+<strong>Goal:</strong> Define the exact events and data structures for real-time communication.</p>
+<hr />
+<h3 id="core-technology">Core Technology</h3>
+<ul>
+<li><strong>Library:</strong> <code>python-socketio</code> integrated with FastAPI via <code>fastapi-socketio</code>.</li>
+<li><strong>Purpose:</strong> To provide a persistent, bidirectional communication channel between the FastAPI backend and the React frontend.</li>
+</ul>
+<h3 id="service-location">Service Location</h3>
+<p>All WebSocket connection logic will be managed within a dedicated service module to keep the main <code>main.py</code> file clean.</p>
+<ul>
+<li><strong>File:</strong> <code>backend/app/services/websocket_manager.py</code></li>
+<li><strong>Object:</strong> A singleton class or object instance named <code>sio</code> (Socket.IO Manager).</li>
+</ul>
+<p>This <code>sio</code> object will be initialized in <code>websocket_manager.py</code> and imported into <code>main.py</code> to be attached to the FastAPI application.</p>
+<h3 id="server-side-event-handlers">Server-Side Event Handlers</h3>
+<p>The <code>sio</code> manager must implement handlers for the following standard events.</p>
+<h4 id="connect"><code>connect</code></h4>
+<ul>
+<li><strong>Trigger:</strong> A new client establishes a WebSocket connection.</li>
+<li><strong>Action:</strong><ol>
+<li>Log the connection with the client's unique Session ID (<code>sid</code>).</li>
+<li>Emit a <code>'welcome'</code> message back to the connected client to confirm the connection was successful.</li>
+</ol>
+</li>
+<li><strong>Example Implementation:</strong>
+    <div class="highlight"><pre><span></span><code><span class="c1"># In websocket_manager.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">socketio</span>
+
+<span class="n">sio</span> <span class="o">=</span> <span class="n">socketio</span><span class="o">.</span><span class="n">AsyncServer</span><span class="p">(</span><span class="n">async_mode</span><span class="o">=</span><span class="s1">&#39;asgi&#39;</span><span class="p">,</span> <span class="n">cors_allowed_origins</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+
+<span class="nd">@sio</span><span class="o">.</span><span class="n">event</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="n">environ</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Socket.IO] Client connected: </span><span class="si">{</span><span class="n">sid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">sio</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;welcome&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Successfully connected to Quantum Trader Pro real-time feed.&#39;</span><span class="p">},</span> <span class="n">to</span><span class="o">=</span><span class="n">sid</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<h4 id="disconnect"><code>disconnect</code></h4>
+<ul>
+<li><strong>Trigger:</strong> A client disconnects.</li>
+<li><strong>Action:</strong><ol>
+<li>Log the disconnection event with the client's <code>sid</code>.</li>
+</ol>
+</li>
+<li><strong>Example Implementation:</strong>
+    <div class="highlight"><pre><span></span><code><span class="nd">@sio</span><span class="o">.</span><span class="n">event</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">disconnect</span><span class="p">(</span><span class="n">sid</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Socket.IO] Client disconnected: </span><span class="si">{</span><span class="n">sid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h3 id="emitted-events-server-to-client">Emitted Events (Server to Client)</h3>
+<p>The server will proactively push data to all connected clients using these custom events.</p>
+<h4 id="new_signal"><code>new_signal</code></h4>
+<ul>
+<li><strong>Trigger:</strong> A new trading signal is generated by the backend (e.g., from the Redis Pub/Sub listener).</li>
+<li><strong>Payload (Data Structure):</strong> A JSON object with a consistent structure.
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;QUANTUM_CIPHER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signal&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">&quot;SELL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">162.50</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BTC/USDT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeframe&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1m&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-27T10:00:00Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><strong>Action:</strong> The server broadcasts this payload to all connected clients using <code>await sio.emit('new_signal', data)</code>.</li>
+</ul>
+<h4 id="status_update"><code>status_update</code></h4>
+<ul>
+<li><strong>Trigger:</strong> A change in the backend's operational status.</li>
+<li><strong>Payload (Data Structure):</strong>
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SignalMonitorWorker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">&quot;degraded&quot;</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">&quot;offline&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Monitoring market for signals.&quot;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><strong>Action:</strong> Broadcast the status update to all clients.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1128,10 +1461,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "content.code.annotate"], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
