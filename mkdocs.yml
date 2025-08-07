@@ -1,0 +1,22 @@
+site_name: Quantum Trader Pro Docs
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+
+nav:
+  - 'Home': index.md
+  - 'Get Started':
+    - 'Quickstart': getting-started.md
+    - 'Configuration': configuration.md
+  - 'Tutorials':
+    - 'Real-Time Setup': tutorials/real-time-setup.md
+  - 'Conceptual Guides':
+    - 'System Architecture': concepts/system-architecture.md
+    - 'AI Learning System': concepts/ai-learning-system.md
+  - 'API Reference':
+    - 'Quantum Cipher': reference/quantum-cipher.md
+    - 'Quantum Volume Profile': reference/quantum-volume-profile.md
