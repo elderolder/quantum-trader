@@ -7,7 +7,6 @@ theme:
     - content.code.copy
     - content.code.annotate
 
-# This is the section that enables fancy features like buttons and callouts
 markdown_extensions:
   - admonition
   - pymdownx.details
