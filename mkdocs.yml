@@ -34,5 +34,8 @@ nav:
   - 'API Reference':
     - 'Quantum Cipher API': api/quantum_cipher_api.md
     - 'Volume Profile API': api/quantum_volume_profile_api.md
+  - 'AI & Signal Logic':
+    - 'Indicator Definitions': ai-logic/indicator_definitions.md
+    - 'Prompt Templates': ai-logic/prompt_templates.md
   - 'Deployment & Security':
     - 'Security Checklist': deployment/security_checklist.md
