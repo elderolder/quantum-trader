@@ -40,6 +40,7 @@ If a new signal is found, serialize the signal data to a JSON string.
 Use the r.publish('quantum_signals', json_string) command to send the data to the quantum_signals channel.
 Example Code Snippet:
 
+```python
 # In app/workers/signal_monitor.py
 import redis
 import json
@@ -57,6 +58,7 @@ def monitor_market():
             r.publish('quantum_signals', json.dumps(signal_data))
             print("Published signal to Redis.")
         time.sleep(60)
+```
 
 2. The Subscriber (FastAPI main.py)
 The main web application will listen for these messages in a background task.
@@ -69,6 +71,7 @@ When a message is received, it deserializes the JSON data.
 It then calls the WebSocket manager (sio.emit) to broadcast the data to all connected clients.
 Example Code Snippet:
 
+```python
 # In main.py
 import asyncio
 import redis.asyncio as redis
@@ -95,3 +98,4 @@ async def redis_listener():
 # @app.on_event("startup")
 # async def startup_event():
 #     asyncio.create_task(redis_listener())
+```
