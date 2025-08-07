@@ -25,8 +25,7 @@ This document outlines the use of Redis Pub/Sub as the central message bus for t
 
 **Audience:** You (Infrastructure), Gemini (Implementation)
 **Goal:** To define the channels and data flow for inter-service communication.
-
----
+```
 
 ### Core Concept
 
@@ -43,11 +42,11 @@ This prevents the web server from being blocked by long-running tasks like const
 graph TD
     A[Signal Monitor Worker] --> B(Calculates Signal);
     B --> C{{Redis}};
-    C -- Publishes to 'quantum_signals' channel --> C;
-    D[FastAPI Server] -- Subscribes to 'quantum_signals' --> C;
+    C -- "Publishes to 'quantum_signals' channel" --> C;
+    D[FastAPI Server] -- "Subscribes to 'quantum_signals'" --> C;
     D --> E(Receives Signal from Redis);
     E --> F[WebSocket Manager];
-    F -- Emits 'new_signal' event --> G((Connected Clients));
+    F -- "Emits 'new_signal' event" --> G((Connected Clients));
 ```
 
 Implementation Details
