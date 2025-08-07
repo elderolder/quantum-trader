@@ -1,0 +1,125 @@
+<!-- docs/index.html -->
+{% extends "main.html" %}
+{% block tabs %}{% endblock %}
+{% block content %}
+
+<!-- Custom CSS incorporating Deepseek's recommendations -->
+<style>
+  /* Main dashboard layout */
+  .command-center-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .team-column {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Gradient backgrounds */
+  .backend-column { 
+    background: linear-gradient(135deg, #2c3e50, #4a6491); /* Technical Blue */
+  }
+  .frontend-column {
+    background: linear-gradient(135deg, #8e44ad, #4a148c); /* Purple Fusion */
+  }
+
+  .team-column h2 {
+    color: white;
+    margin-top: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  /* Placeholder for character avatars */
+  .avatar {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    /* We'll add animation styles here later */
+  }
+  
+  /* Job list styling */
+  .job-list {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1; /* Allows list to fill space */
+  }
+
+  .job-item a {
+    display: block;
+    padding: 0.8rem 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.75rem;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+    border-left: 4px solid transparent;
+  }
+  .job-item a:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateX(5px);
+  }
+
+  /* Status indicators on jobs */
+  .job-item.status-completed a { border-left-color: #27ae60; } /* Green */
+  .job-item.status-in-progress a { border-left-color: #f1c40f; } /* Yellow */
+  .job-item.status-planned a { border-left-color: #3498db; } /* Blue */
+
+  /* Responsive Design for mobile */
+  @media (max-width: 768px) {
+    .command-center-dashboard {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- Main Page Title -->
+<h1>The Command Center</h1>
+<p>A live look at the development of Axion Citadel, a collaboration between a human architect and an AI builder.</p>
+
+<!-- The two-column dashboard -->
+<div class="command-center-dashboard">
+
+  <!-- Backend Column -->
+  <div class="team-column backend-column">
+    <div class="avatar">👨‍💻</div>
+    <h2>Backend Jobs (The Architect)</h2>
+    <ul class="job-list">
+      <li class="job-item status-completed"><a href="./backend/fastapi_structure/">FastAPI Application Structure</a></li>
+      <li class="job-item status-completed"><a href="./backend/redis_pubsub/">Redis Pub/Sub Architecture</a></li>
+      <li class="job-item status-completed"><a href="./ai-logic/indicator_definitions/">Indicator Definitions</a></li>
+      <li class="job-item status-in-progress"><a href="./api/quantum_cipher_api/">Quantum Cipher API</a></li>
+      <li class="job-item status-planned"><a href="#">Strategy Backtesting Engine</a></li>
+    </ul>
+  </div>
+
+  <!-- Frontend Column -->
+  <div class="team-column frontend-column">
+    <div class="avatar">🤖</div>
+    <h2>Frontend Jobs (The Builder)</h2>
+    <ul class="job-list">
+      <li class="job-item status-completed"><a href="./frontend/react_structure/">React Application Structure</a></li>
+      <li class="job-item status-completed"><a href="./backend/websocket_service/">WebSocket Service Contract</a></li>
+      <li class="job-item status-completed"><a href="./ai-logic/prompt_templates/">AI Prompt Templates</a></li>
+      <li class="job-item status-in-progress"><a href="#">Real-time Chart Integration</a></li>
+      <li class="job-item status-planned"><a href="#">AI Analysis View</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- We'll add the JavaScript for animations here later -->
+<script>
+  // Placeholder for the animation logic from the blueprint
+  console.log("Command Center Initialized. Animation logic to be added.");
+</script>
+
+{% endblock %}
