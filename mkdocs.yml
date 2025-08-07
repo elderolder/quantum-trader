@@ -10,19 +10,23 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - attr_list
 
 nav:
   - 'Home': index.md
-  - 'Get Started':
-    - 'Quickstart': getting-started.md
-    - 'Configuration': configuration.md
-  - 'Tutorials':
-    - 'Real-Time Setup': tutorials/real-time-setup.md
-  - 'Conceptual Guides':
-    - 'System Architecture': concepts/system-architecture.md
-    - 'AI Learning System': concepts/ai-learning-system.md
+  - 'Getting Started':
+    - 'Quickstart': getting-started/quickstart.md
+  - 'Architecture':
+    - 'System Overview': architecture/system_overview.md
+    - 'Real-Time Data Flow': architecture/real_time_data_flow.md
+    - 'AI Orchestration': architecture/ai_orchestration.md
   - 'API Reference':
-    - 'Quantum Cipher': reference/quantum-cipher.md
-    - 'Quantum Volume Profile': reference/quantum-volume-profile.md
+    - 'Quantum Cipher API': api/quantum_cipher_api.md
+    - 'Volume Profile API': api/quantum_volume_profile_api.md
+  - 'Deployment & Security':
+    - 'Security Checklist': deployment/security_checklist.md
