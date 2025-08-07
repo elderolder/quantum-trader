@@ -27,6 +27,10 @@ nav:
     - 'System Overview': architecture/system_overview.md
     - 'Real-Time Data Flow': architecture/real_time_data_flow.md
     - 'AI Orchestration': architecture/ai_orchestration.md
+  - 'Backend Services':
+    - 'FastAPI Structure': backend/fastapi_structure.md
+    - 'WebSocket Service': backend/websocket_service.md
+    - 'Redis Pub/Sub': backend/redis_pubsub.md
   - 'API Reference':
     - 'Quantum Cipher API': api/quantum_cipher_api.md
     - 'Volume Profile API': api/quantum_volume_profile_api.md
