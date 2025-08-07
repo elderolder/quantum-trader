@@ -18,5 +18,5 @@ This documentation provides a comprehensive guide to understanding, setting up, 
 
 ### Where to Go Next
 
-[Get Started in 5 Minutes](./getting-started.md){ .md-button .md-button--primary }
-[View the System Architecture](./concepts/system-architecture.md){ .md-button }
+[Get Started in 5 Minutes](./getting-started/quickstart.md){ .md-button .md-button--primary }
+[View the System Architecture](./architecture/system_overview.md){ .md-button }
