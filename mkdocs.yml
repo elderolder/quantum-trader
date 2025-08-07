@@ -20,7 +20,9 @@ markdown_extensions:
 nav:
   - 'Home': index.md
   - 'Getting Started':
+    - 'Introduction': getting-started/introduction.md
     - 'Quickstart': getting-started/quickstart.md
+    - 'Tools & Resources': getting-started/tools_resources.md
   - 'Architecture':
     - 'System Overview': architecture/system_overview.md
     - 'Real-Time Data Flow': architecture/real_time_data_flow.md
